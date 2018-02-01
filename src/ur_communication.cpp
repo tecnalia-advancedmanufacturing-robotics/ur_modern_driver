@@ -140,6 +140,7 @@ void UrCommunication::run() {
 		if (keepalive_) {
 			//reconnect
 			print_warning("Secondary port: No connection. Is controller crashed? Will try to reconnect in 10 seconds...");
+			exit(-1);
 			sec_sockfd_ = socket(AF_INET, SOCK_STREAM, 0);
 			if (sec_sockfd_ < 0) {
 				print_fatal("ERROR opening secondary socket");

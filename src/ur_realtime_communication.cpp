@@ -152,6 +152,7 @@ void UrRealtimeCommunication::run() {
 		if (keepalive_) {
 			//reconnect
 			print_warning("Realtime port: No connection. Is controller crashed? Will try to reconnect in 10 seconds...");
+			exit(-1);
 			sockfd_ = socket(AF_INET, SOCK_STREAM, 0);
 			if (sockfd_ < 0) {
 				print_fatal("ERROR opening socket");
